@@ -1,95 +1,38 @@
+import style from "./page.module.css";
+import React from "react";
+import Button from "@/component/base/button/button";
 import Image from "next/image";
-import styles from "./page.module.css";
-
-export default function Home() {
+import image from "@/public/images/bg.svg?url";
+import Footer from "@/component/module/footer/Footer";
+import Navbar from "@/component/module/Navbar/Navbar";
+const LandingPage = () => {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.js</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <>
+      <Navbar />
+      <main>
+        <div className="container" style={{ marginTop: "50px" }}>
+          <div className="row">
+            <div className="col d-flex align-items-center justify-content-center">
+              <div className="card" style={{ width: "70%", border: "none" }}>
+                <div className="card-body ">
+                  <h1 className="mb-4">Talenta terbaik negri untuk perubahan revolusi 4.0</h1>
+                  <p className="mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In euismod ipsum et dui rhoncus auctor.</p>
+                  <Button child="Mulai Dari Sekarang" style={{ backgroundColor: "#5E50A1", borderRadius: "4px", color: "#fff" }} />
+                </div>
+              </div>
+            </div>
+            <div className="col">
+              <div className={style.imgWrapper}>
+                <div className={style.imgBackground}></div>
+                <Image className={style.img} src={image} alt="image" />
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+      </main>
+      <Footer />
+    </>
   );
-}
+};
+
+export default LandingPage;

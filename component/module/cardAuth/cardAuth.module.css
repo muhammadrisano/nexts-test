@@ -1,0 +1,17 @@
+.bgWrapper {
+  background-color: #5e50a1;
+  width: 50vh;
+  height: auto;
+  background-image: url("../../../public/images/bg.svg?url");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  width: auto;
+  background-blend-mode: soft-light;
+}
+.titleWrapper {
+  width: 80%;
+  margin-left: 50px;
+  height: 50%;
+  margin-top: 180px;
+}
