@@ -1,17 +1,37 @@
 .bgWrapper {
   background-color: #5e50a1;
-  width: 50vh;
-  height: auto;
   background-image: url("../../../public/images/bg.svg?url");
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
-  width: auto;
   background-blend-mode: soft-light;
+  display: flex;
+  justify-content: center;
+}
+.bgWrapper .imageWrapper {
+  display: flex;
+  margin-left: 40px;
+  margin-top: 50px;
 }
 .titleWrapper {
   width: 80%;
-  margin-left: 50px;
   height: 50%;
   margin-top: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media (min-width: 300px) and (max-width: 768px) {
+  .bgWrapper {
+    background: #5e50a1;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+  }
+  .titleWrapper {
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
 }

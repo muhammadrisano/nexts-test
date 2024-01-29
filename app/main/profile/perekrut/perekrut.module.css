@@ -1,0 +1,29 @@
+.card {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.bg {
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+  height: 200px;
+  background-color: #5e50a1;
+  top: 0;
+}
+.imgWrapper {
+  width: 200px;
+
+  box-sizing: border-box;
+  margin-top: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 50%;
+}
+.img {
+  width: 100%;
+  height: auto;
+}

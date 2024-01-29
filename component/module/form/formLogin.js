@@ -3,7 +3,7 @@
 import Input from "@/component/base/input/input";
 import React, { useState } from "react";
 import Button from "@/component/base/button/button";
-const FormLoginWorker = () => {
+const FormLogin = () => {
   const [values, setValues] = useState("");
 
   return (
@@ -19,4 +19,4 @@ const FormLoginWorker = () => {
   );
 };
 
-export default FormLoginWorker;
+export default FormLogin;

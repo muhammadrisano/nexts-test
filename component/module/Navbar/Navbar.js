@@ -7,7 +7,7 @@ import { FaUserCircle } from "react-icons/fa";
 import Link from "next/link";
 const Navbar = () => {
   return (
-    <nav className=" navbar navbar-expand-lg bg-body-light fixed-top  ">
+    <nav className=" navbar navbar-expand-lg bg-light fixed-top  ">
       <div className="container-fluid ">
         <a className="navbar-brand ms-5" href="/main/home">
           <Image src={logo} />

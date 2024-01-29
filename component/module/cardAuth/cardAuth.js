@@ -5,12 +5,12 @@ import style from "./cardAuth.module.css";
 const CardAuth = () => {
   return (
     <div className={`col ${style.bgWrapper}`}>
-      <div className="d-flex mt-5 ms-5">
+      <div className={`${style.imageWrapper} `}>
         <Image src={logo} alt="Peworld" />
-        <h6 className="text-light mt-1 ms-1">Peworld</h6>
+        <h6 className="text-light ">Peworld</h6>
       </div>
       <div className={`container ${style.titleWrapper}`}>
-        <h1 className="text-light">Temukan developer berbakat & terbaik di berbagai bidang keahlian</h1>
+        <h1 className="text-light ">Temukan developer berbakat & terbaik di berbagai bidang keahlian</h1>
       </div>
     </div>
   );

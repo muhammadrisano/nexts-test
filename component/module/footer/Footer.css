@@ -1,0 +1,29 @@
+footer .footerWrapper {
+  margin-top: 70px;
+  width: 80%;
+}
+footer .imageWrapper {
+  padding-top: 70px;
+}
+footer .textWrapper {
+  width: 30%;
+}
+footer hr {
+  color: #fff;
+  margin-top: 67px;
+}
+
+@media only screen and (max-width: 768px) {
+  footer .footerWrapper {
+    margin-top: 20px;
+  }
+  footer .imageWrapper {
+    padding-top: 20px;
+  }
+  footer .textWrapper {
+    width: 100%;
+  }
+  footer hr {
+    margin-top: 10px;
+  }
+}
