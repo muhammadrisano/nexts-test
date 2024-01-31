@@ -1,24 +1,58 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import image from "@/public/images/profilePicture.svg?url";
-import Button from "@/component/base/button/button";
+import { FaUser } from "react-icons/fa";
 import { MdEdit } from "react-icons/md";
+import Button from "@/component/base/button/button";
 
-const CardEditProfile = (props) => {
+const CardEditProfile = () => {
+  const [profileData, setProfileData] = useState(null);
+
+  useEffect(() => {
+    const fetchProfile = async () => {
+      try {
+        const token = localStorage.getItem("token");
+        const response = await fetch("https://fwm17-be-peword.vercel.app/v1/workers/profile", {
+          method: "GET",
+          headers: {
+            Authorization: `Bearer ${token}`,
+            "Content-Type": "application/json",
+          },
+        });
+
+        if (!response.ok) {
+          throw new Error("Failed to fetch profile data");
+        }
+
+        const data = await response.json();
+        console.log(data);
+        setProfileData(data.data);
+      } catch (error) {
+        console.error("Error fetching profile data:", error.message);
+      }
+    };
+
+    fetchProfile();
+  }, []);
+
   return (
-    <div className="card py-3" style={{ width: "80%", borderRadius: "10px" }}>
-      <Image src={image} className="card-img " />
+    <div className="card py-3" style={{ width: "80%", height: "fit-content", borderRadius: "10px" }}>
+      <div className="card-img" style={{ boxSizing: "border-box", width: "100px", height: "100px", marginLeft: "auto", marginRight: "auto", borderRadius: "50%" }}>
+        {profileData && profileData.photo ? (
+          <Image src={profileData.photo} className="card-img " style={{ width: "100%", height: "auto" }} />
+        ) : (
+          <FaUser className="card-img " style={{ width: "100%", height: "auto", borderRadius: "50%", color: "#9EA0A5" }} />
+        )}
+      </div>
       <div className="d-flex justify-content-center mt-3" style={{ color: "#9EA0A5" }}>
         <MdEdit />
         Edit
       </div>
       <div className="card-body">
-        <h4 className="card-title ">Louis Tomlinson</h4>
-        <p className="card-subtitle text-secondary">Web Developer</p>
-        <p className="card-subtitle text-secondary">Sleman, Yogyakarta</p>
-        <p className="card-subtitle text-secondary">Freelancer</p>
-
+        <h4 className="card-title ">{profileData ? profileData.name || "-" : "-"}</h4>
+        <p className="card-subtitle text-secondary">{profileData ? profileData.job_desk || "-" : "-"}</p>
+        <p className="card-subtitle text-secondary">{profileData ? profileData.domicile || "-" : "-"}</p>
+        <p className="card-subtitle text-secondary">{profileData ? profileData.workplace || "-" : "-"}</p>
         <Button className="mt-3" child="Simpan" style={{ color: "white", backgroundColor: "#5E50A1", width: "100%" }} />
         <Button className="mt-2" child="Batal" style={{ color: "#5E50A1", backgroundColor: "white", border: "1px solid #5E50A1 ", width: "100%" }} />
       </div>

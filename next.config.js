@@ -27,3 +27,9 @@ module.exports = {
 
   // ...other config
 };
+module.exports = {
+  reactStrictMode: true,
+  env: {
+    HIRE_JOB_URL: process.env.HIRE_JOB_URL,
+  },
+};

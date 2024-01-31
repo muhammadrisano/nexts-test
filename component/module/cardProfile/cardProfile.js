@@ -1,7 +1,7 @@
 "use client";
+
 import React from "react";
 import Image from "next/image";
-import image from "@/public/images/profilePicture.svg?url";
 import Button from "@/component/base/button/button";
 import { MdOutlineEmail } from "react-icons/md";
 import { FaInstagram } from "react-icons/fa";
@@ -9,19 +9,23 @@ import { FiGithub } from "react-icons/fi";
 import { LuGitlab } from "react-icons/lu";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { FaUser } from "react-icons/fa6";
+
 const CardProfile = (props) => {
-  const { child } = props;
+  const { src, name, job, address, workPlace, description, child } = props;
   const router = useRouter();
 
   return (
     <div className="card py-3" style={{ width: "80%", borderRadius: "10px" }}>
-      <Image src={image} className="card-img " />
+      <div className="card-img" style={{ boxSizing: "border-box", width: "100px", height: "100px", marginLeft: "auto", marginRight: "auto", borderRadius: "50%" }}>
+        {src ? <Image src={src} className="card-img " style={{ width: "100%", height: "auto" }} /> : <FaUser className="card-img " style={{ width: "100%", height: "auto", borderRadius: "50%", color: "#9EA0A5" }} />}
+      </div>
       <div className="card-body">
-        <h4 className="card-title ">Louis Tomlinson</h4>
-        <p className="card-subtitle text-secondary">Web Developer</p>
-        <p className="card-subtitle text-secondary">Sleman, Yogyakarta</p>
-        <p className="card-subtitle text-secondary">Freelancer</p>
-        <p className="card-text text-secondary mt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum erat orci, mollis nec gravida sed, ornare quis urna. Curabitur eu lacus fringilla, vestibulum risus at.</p>
+        <h4 className="card-title ">{name}</h4>
+        <p className="card-subtitle text-secondary">{job}</p>
+        <p className="card-subtitle text-secondary">{address}</p>
+        <p className="card-subtitle text-secondary">{workPlace}</p>
+        <p className="card-text text-secondary mt-2">{description}</p>
         <Button
           child={child}
           onClick={() => {
