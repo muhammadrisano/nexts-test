@@ -19,6 +19,7 @@ const FormregisterWorker = () => {
 
   const handleRegister = async (e) => {
     e.preventDefault();
+    console.log(process.env.HIRE_JOB_URL);
     fetch("https://fwm17-be-peword.vercel.app/v1/workers/register", {
       method: "POST",
       headers: {

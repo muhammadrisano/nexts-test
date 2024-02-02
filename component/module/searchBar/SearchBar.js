@@ -1,21 +1,17 @@
-"use client";
-
 import Button from "@/component/base/button/button";
 import React from "react";
 import Card from "../card/Card";
-import useSWR from "swr";
-
-const fetcher = (...args) =>
-  fetch(...args).then(async (res) => {
-    if (!res.ok) {
-      const result = await res.json();
-      throw result.message;
-    }
-    return res.json();
-  });
-const SearchBar = () => {
-  const { data, error, isLoading } = useSWR("https://fwm17-be-peword.vercel.app/v1/workers", fetcher);
+const getDataWorker = async () => {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_HIRE_JOB_URL}/workers`, { next: { revalidate: 3600 } });
+  if (!res.ok) {
+    throw new Error("Failed to fetch data");
+  }
+  return res.json();
+};
+const SearchBar = async () => {
+  const data = await getDataWorker();
   console.log(data);
+  console.log(process.env.NEXT_PUBLIC_HIRE_JOB_URL);
   return (
     <div>
       <div className="bg-body-tertiary my-4">
@@ -40,15 +36,12 @@ const SearchBar = () => {
           </div>
         </form>
       </div>
-      {isLoading ? (
-        <h3>Loading...</h3>
-      ) : (
-        <div>
-          {data?.data?.map((item) => (
-            <Card key={item.id} name={item.name} src={item.photo} job={item.job_desk || "-"} address={item.domicile || "-"} />
-          ))}
-        </div>
-      )}
+
+      <div>
+        {data?.data?.map((item) => (
+          <Card key={item.id} name={item.name} src={item.photo} job={item.job_desk || "-"} address={item.domicile || "-"} />
+        ))}
+      </div>
     </div>
   );
 };

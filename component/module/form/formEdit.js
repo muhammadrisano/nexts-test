@@ -8,7 +8,7 @@ const EditForm = () => {
   const router = useRouter();
   const [values, setValues] = useState({
     name: "",
-    job_desc: "",
+    jobDesc: "",
     domicile: "",
     workplace: "",
     description: "",
@@ -50,10 +50,10 @@ const EditForm = () => {
         <h4>Data diri</h4>
         <hr />
         <form onSubmit={handleEditProfile}>
-          <Input className="form-control" type="text" name="name" label="Nama Lengkap" placeholder="Masukkan nama lengkap" id="name" onChange={onChange} />
-          <Input className="form-control" type="text" name="job_desc" label="Job Desk." placeholder="Masukkan Job Desk." id="jobDesc" onChange={onChange} />
-          <Input className="form-control" type="text" name="domicile" label="Domisili" placeholder="Masukkan Domisili" id="address" onChange={onChange} />
-          <Input className="form-control" type="text" name="workplace" label="Tempat Kerja" placeholder="Masukkan tempat kerja" id="companyAddress" onChange={onChange} />
+          <Input className="form-control" type="text" name="name" label="Nama Lengkap" placeholder="Masukkan nama lengkap" id="name" onChange={onChange} value={values.name} />
+          <Input className="form-control" type="text" name="jobDesc" label="Job Desk." placeholder="Masukkan Job Desk." id="jobDesc" onChange={onChange} value={values.jobDesc} />
+          <Input className="form-control" type="text" name="domicile" label="Domisili" placeholder="Masukkan Domisili" id="address" onChange={onChange} value={values.domicile} />
+          <Input className="form-control" type="text" name="workplace" label="Tempat Kerja" placeholder="Masukkan tempat kerja" id="companyAddress" onChange={onChange} value={values.workplace} />
           <label className="form-label mt-4" htmlFor="desc" style={{ color: "#9EA0A5" }}>
             Deskrpsi Singkat
           </label>

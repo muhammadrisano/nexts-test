@@ -1,8 +1,29 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Button from "@/component/base/button/button";
+import { TiDeleteOutline } from "react-icons/ti";
 
 const FormSkill = () => {
+  const [skill, setSkill] = useState(null);
+  const getSkill = async () => {
+    const token = localStorage.getItem("token");
+    const res = await fetch(`${process.env.NEXT_PUBLIC_HIRE_JOB_URL}/skills`, {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json",
+      },
+    });
+    if (!res.ok) {
+      throw new Error("Failed to fetch skills data");
+    }
+    const data = await res.json();
+    setSkill(data.data);
+  };
+  useEffect(() => {
+    getSkill();
+  }, []);
+
   const [values, setValues] = useState({
     skillName: "",
   });
@@ -14,8 +35,7 @@ const FormSkill = () => {
   const handleAddSkill = async (e) => {
     e.preventDefault();
     const token = localStorage.getItem("token");
-    console.log(token);
-    fetch("https://fwm17-be-peword.vercel.app/v1/skills", {
+    fetch(`${process.env.NEXT_PUBLIC_HIRE_JOB_URL}/skills`, {
       method: "POST",
       headers: {
         Authorization: `Bearer ${token}`,
@@ -30,25 +50,55 @@ const FormSkill = () => {
         }
         return res.json();
       })
-      .then((res) => {
-        console.log(res);
-        const message = res.message;
-        console.log(message);
+      .then(() => {
+        getSkill();
+        setValues({ skillName: "" });
       })
       .catch((err) => {
         console.log(err);
       });
   };
-
+  const deleteSkill = async (id) => {
+    const token = localStorage.getItem("token");
+    await fetch(`${process.env.NEXT_PUBLIC_HIRE_JOB_URL}/skills/${id}`, {
+      method: "DELETE",
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "content-type": "application/json",
+      },
+    })
+      .then(async (res) => {
+        if (!res.ok) {
+          const result = await res.json();
+          throw result.message;
+        }
+        return res.json();
+      })
+      .then(() => {
+        getSkill();
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
   return (
     <div>
       <h4>Skill</h4>
       <hr />
-      {/* <div className="d-flex" style={{ flexWrap: "wrap" }}>
-        {data?.data?.map((item) => (
-          <div key={item.skill_id}>{item.skillName}</div>
+      <div className="d-flex" style={{ flexWrap: "wrap" }}>
+        {skill?.map((item) => (
+          <div style={{ position: "relative" }}>
+            <div className=" text-light py-2 mx-2 px-2 my-2" key={item.id} style={{ backgroundColor: "#5E50A1" }}>
+              {item.skill_name}
+            </div>
+            <TiDeleteOutline
+              className="bg-warning text-danger"
+              style={{ position: "absolute", top: "0", right: "0", width: "20px", height: "auto", borderRadius: "50%", transform: "translateX(20%)", cursor: "pointer" }}
+              onClick={() => deleteSkill(item.id)}
+            />
+          </div>
         ))}
-      </div> */}
+      </div>
       <form onSubmit={handleAddSkill}>
         <div className="row mt-2">
           <div className="col-sm-9 col-md-10 col-lg-10 col-xl-10 mb-2">

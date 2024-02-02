@@ -6,7 +6,7 @@ const Register = () => {
     <div>
       <div className="row row-cols-sm-1 row-cols-md-1 row-cols-lg-2 row-cols-xl-2">
         <CardAuth />
-        <div className="col d-flex justify-content-center">
+        <div className="col  d-flex align-items-center">
           <div className="container  mt-5" style={{ width: "80%" }}>
             <h2 style={{ color: "#1F2A36" }}>Halo, Pewpeople</h2>
             <p className="mb-4" style={{ color: "#46505C" }}>

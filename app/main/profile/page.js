@@ -7,7 +7,7 @@ const Profile = () => {
   const [profileData, setProfileData] = useState(null);
 
   useEffect(() => {
-    const fetchProfile = async () => {
+    const getProfile = async () => {
       try {
         const token = localStorage.getItem("token");
         const response = await fetch("https://fwm17-be-peword.vercel.app/v1/workers/profile", {
@@ -30,7 +30,7 @@ const Profile = () => {
       }
     };
 
-    fetchProfile();
+    getProfile();
   }, []);
 
   return (

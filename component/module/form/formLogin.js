@@ -16,6 +16,7 @@ const FormLogin = () => {
 
   const handleLogin = async (e) => {
     e.preventDefault();
+    console.log(process.env.HIRE_JOB_URL);
     fetch("https://fwm17-be-peword.vercel.app/v1/auth/login", {
       method: "POST",
       headers: {
@@ -31,7 +32,6 @@ const FormLogin = () => {
         return res.json();
       })
       .then((res) => {
-        console.log(res);
         localStorage.setItem("token", res.data.token);
         const message = res.message;
         alert(message);
