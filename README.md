@@ -6,6 +6,9 @@ Peworld is a platform-based website for searching and recruiting freelancers or 
 Users can sign-up and login as a worker or recruiter. Worker can Edit their profile, add a portfolio, and add skill.
 Recruiter can edit their profile and hire a worker
 
+## Build with
+Next.js, bootstrap
+
 ## Getting Started
 
 First, run the development server:
