@@ -1,4 +1,6 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Peworld
+Peworld is a platform-based website for searching and recruiting freelancers or project workers. This platform allows workers to create an account and display their profiles and portfolios. Applicants can also create an account to view the list of available workers and submit applications to them.
 
 ## Getting Started
 
