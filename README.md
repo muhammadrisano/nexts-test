@@ -10,7 +10,17 @@ Recruiter can edit their profile and hire a worker
 Next.js, bootstrap
 
 ## Package and dependecies
-
+```bash
+"@nestjs/axios": "^3.0.1",
+    "axios": "^1.6.7",
+    "bootstrap": "^5.3.2",
+    "next": "14.1.0",
+    "next-images": "^1.8.5",
+    "react": "^18",
+    "react-bootstrap": "^2.10.0",
+    "react-dom": "^18",
+    "react-icons": "^5.0.1",
+    "swr": "^2.2.4"
 ## Getting Started
 
 First, run the development server:
