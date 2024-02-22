@@ -29,6 +29,6 @@ bun dev
 💻 [Chanra S Bakkara](https://github.com/ChanraSB)
 
 ## Related Project
-⚡[Demo Peworld](https://next-hire-job.vercel.app/)⚡
-⚡[Frontend Peworld](https://github.com/ChanraSB/next-HireJob)⚡
+⚡[Demo Peworld](https://next-hire-job.vercel.app/)⚡<br>
+⚡[Frontend Peworld](https://github.com/ChanraSB/next-HireJob)⚡<br>
 ⚡[Backend Peworld](https://github.com/ChanraSB/next-HireJob)⚡
