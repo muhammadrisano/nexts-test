@@ -30,4 +30,5 @@ bun dev
 
 ## Related Project
 ⚡[Demo Peworld](https://next-hire-job.vercel.app/)⚡
-
+⚡[Frontend Peworld](https://github.com/ChanraSB/next-HireJob)⚡
+⚡[Backend Peworld](https://github.com/ChanraSB/next-HireJob)⚡
