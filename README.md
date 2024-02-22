@@ -21,6 +21,7 @@ Next.js, bootstrap
     "react-dom": "^18",
     "react-icons": "^5.0.1",
     "swr": "^2.2.4"
+```
 ## Getting Started
 
 First, run the development server:
