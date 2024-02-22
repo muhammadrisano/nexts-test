@@ -9,6 +9,8 @@ Recruiter can edit their profile and hire a worker
 ## Build with
 Next.js, bootstrap
 
+## Package and dependecies
+
 ## Getting Started
 
 First, run the development server:
