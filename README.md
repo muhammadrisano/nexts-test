@@ -22,6 +22,10 @@ Next.js, bootstrap
     "react-icons": "^5.0.1",
     "swr": "^2.2.4"
 ```
+## Environment Variable
+```dash
+NEXT_PUBLIC_HIRE_JOB_URL=
+```
 ## Getting Started
 
 First, run the development server:
