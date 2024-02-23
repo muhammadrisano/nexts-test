@@ -1,5 +1,5 @@
 
-# Peworld
+# Peworld Frontend
 Peworld is a platform-based website for searching and recruiting freelancers or project workers. This platform allows workers to create an account and display their profiles and portfolios. Applicants can also create an account to view the list of available workers and submit applications to them.
 
 ## Features
