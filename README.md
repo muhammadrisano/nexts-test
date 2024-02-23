@@ -41,7 +41,7 @@ bun dev
 ```
 
 ## Screenshot
-
+[Register](https://github.com/ChanraSB/next-HireJob/issues/1#issue-2150432401)
 ## Author
 💻 [Chanra S Bakkara](https://github.com/ChanraSB)
 
