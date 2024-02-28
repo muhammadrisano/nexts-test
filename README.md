@@ -41,10 +41,10 @@ bun dev
 ```
 
 ## Screenshot
-[login](https://github.com/ChanraSB/next-HireJob/assets/151555550/01d4dd2e-0a3c-4009-b1de-632693c6a9d3) <br>
+[Login](https://github.com/ChanraSB/next-HireJob/assets/151555550/98b4c7e5-84ad-45bc-abf6-4fc53ed7cdf7) <br>
 [register](https://github.com/ChanraSB/next-HireJob/assets/151555550/71b0a580-509e-48d2-825c-b5f1bd9b9d81) <br>
 [landing page](https://github.com/ChanraSB/next-HireJob/assets/151555550/469954b0-29e0-4a3a-8bbe-7ca16ec58e3b) <br>
-[profile](https://github.com/ChanraSB/next-HireJob/assets/151555550/180354e5-18d9-4299-8297-bbedef0a9ef9) <br>
+[Worker Profile](https://github.com/ChanraSB/next-HireJob/assets/151555550/35237781-42a5-4fa4-9065-6f37522e595b) <br>
 [home](https://github.com/ChanraSB/next-HireJob/assets/151555550/73d51cd0-1be9-4d76-97ba-6a9129a5c3cb) <br>
 [editProfile](https://github.com/ChanraSB/next-HireJob/assets/151555550/9b895716-cb5d-4a59-8f32-cda2783a1e3e) <br>
 [addportfolio](https://github.com/ChanraSB/next-HireJob/assets/151555550/0d6c5225-0533-47b1-bef2-0dac4331c877) <br>
