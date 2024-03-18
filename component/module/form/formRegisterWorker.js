@@ -4,6 +4,7 @@ import Input from "@/component/base/input/input";
 import React, { useState } from "react";
 import Button from "@/component/base/button/button";
 import { useRouter } from "next/navigation";
+import { workerRegister } from "@/service/auth";
 const FormregisterWorker = () => {
   const router = useRouter();
   const [values, setValues] = useState({
@@ -14,35 +15,20 @@ const FormregisterWorker = () => {
   });
 
   const onChange = (e) => {
-    setValues({ ...values, [e.target.name]: e.target.value });
+    setValues((current) => ({
+      ...current,
+      [e.target.name]: e.target.value,
+    }));
   };
 
   const handleRegister = async (e) => {
-    e.preventDefault();
-    console.log(process.env.HIRE_JOB_URL);
-    fetch("https://fwm17-be-peword.vercel.app/v1/workers/register", {
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(values),
-    })
-      .then(async (res) => {
-        if (!res.ok) {
-          const result = await res.json();
-          throw result.message;
-        }
-        return res.json();
-      })
-      .then((res) => {
-        const message = res.message;
-        alert(message);
-        router.push(`/auth/login/`);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    try {
+      e.preventDefault();
+      await workerRegister(values);
+      router.push(`/auth/login`);
+    } catch (error) {
+      console.log(error);
+    }
   };
   return (
     <div>

@@ -18,7 +18,7 @@ const LandingPage = () => {
               <div className="card  " style={{ width: "80%", border: "none" }}>
                 <div className="card-body ">
                   <h2 className="mb-4">Talenta terbaik negri untuk perubahan revolusi 4.0</h2>
-                  <p className="mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In euismod ipsum et dui rhoncus auctor.</p>
+                  <p className="mb-4">Bergabunglah dengan Peworld hari ini dan mari bersama-sama menjelajahi dunia peluang karier yang tak terbatas!</p>
                   <Button className="py-3" child="Mulai Dari Sekarang" style={{ backgroundColor: "#5E50A1", borderRadius: "4px", color: "#fff" }} />
                 </div>
               </div>
@@ -46,19 +46,19 @@ const LandingPage = () => {
                   <ul className="list-group">
                     <li className="list-group-item" style={{ border: "none" }}>
                       <TiTick className={`me-3 ${style.FirstTiTick}`} />
-                      Lorem ipsum dolor sit amet.
+                      Akses ke Bakat Berkualitas
                     </li>
                     <li className="list-group-item" style={{ border: "none" }}>
                       <TiTick className={`me-3 ${style.FirstTiTick}`} />
-                      Lorem ipsum dolor sit amet.
+                      Kemudahan dalam Pencarian
                     </li>
                     <li className="list-group-item" style={{ border: "none" }}>
                       <TiTick className={`me-3 ${style.FirstTiTick}`} />
-                      Lorem ipsum dolor sit amet.
+                      Proses Rekrutmen yang Efisien
                     </li>
                     <li className="list-group-item" style={{ border: "none" }}>
                       <TiTick className={`me-3 ${style.FirstTiTick}`} />
-                      Lorem ipsum dolor sit amet.
+                      Reputasi dan Kepercayaan
                     </li>
                   </ul>
                 </div>
@@ -72,7 +72,7 @@ const LandingPage = () => {
               <div className="card  " style={{ width: "80%", border: "none" }}>
                 <div className="card-body my-4">
                   <h2 className="mb-4">Skill Tallent</h2>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In euismod ipsum et dui rhoncus auctor.</p>
+                  <p>Temukan tallent yang tepat dengan skill yang tepat untukmu</p>
                   <div className="row d-flex justify-content-evenly">
                     <ul className="list-group col-6">
                       <li className="list-group-item" style={{ border: "none" }}>

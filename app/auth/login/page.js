@@ -11,7 +11,7 @@ const Login = () => {
         <div className="container  mt-5" style={{ width: "80%" }}>
           <h2 style={{ color: "#1F2A36" }}>Halo, Pewpeople</h2>
           <p className="mb-4" style={{ color: "#46505C" }}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In euismod ipsum et dui rhoncus auctor.
+          Kami merindukan kehadiran Anda. Silakan masuk untuk melanjutkan pencarian kerja atau mencari bakat terbaik di Peworld.
           </p>
 
           <FormLogin />

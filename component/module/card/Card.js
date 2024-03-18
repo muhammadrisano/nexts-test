@@ -15,11 +15,8 @@ const Card = (props) => {
         <h3>{name}</h3>
         <p className="text-secondary ">{job}</p>
         <p className="text-secondary "> {address}</p>
-        {children}
       </div>
-      <div className="col-sm-3 col-md-4 col-lg-2 col-xl-2 d-flex justify-content-center align-items-center">
-        <Button child="Lihat Profile" style={{ background: "#5E50A1", color: "white" }} />
-      </div>
+      {children}
     </div>
   );
 };

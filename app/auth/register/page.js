@@ -10,7 +10,7 @@ const Register = () => {
           <div className="container  mt-5" style={{ width: "80%" }}>
             <h2 style={{ color: "#1F2A36" }}>Halo, Pewpeople</h2>
             <p className="mb-4" style={{ color: "#46505C" }}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. In euismod ipsum et dui rhoncus auctor.
+            Apakah Anda mencari pekerjaan yang sempurna atau mencari talenta terbaik untuk tim Anda? Daftarkan diri Anda di Peworld dan mulailah perjalanan Anda menuju kesuksesan
             </p>
 
             <TabContainer />

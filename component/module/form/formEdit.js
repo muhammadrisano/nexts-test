@@ -4,45 +4,30 @@ import React, { useState } from "react";
 import Button from "@/component/base/button/button";
 import FormSkill from "./formSkill";
 import { useRouter } from "next/navigation";
+import { editProfile } from "@/service/profile";
 const EditForm = () => {
   const router = useRouter();
   const [values, setValues] = useState({
     name: "",
-    jobDesc: "",
+    job_desk: "",
     domicile: "",
     workplace: "",
     description: "",
   });
   const onChange = (e) => {
-    setValues({ ...values, [e.target.name]: e.target.value });
+    setValues((current) => ({
+      ...current,
+      [e.target.name]: e.target.value,
+    }));
   };
   const handleEditProfile = async (e) => {
-    e.preventDefault();
-    const token = localStorage.getItem("token");
-    fetch("https://fwm17-be-peword.vercel.app/v1/workers/profile", {
-      method: "PUT",
-      headers: {
-        Authorization: `Bearer ${token}`,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(values),
-    })
-      .then(async (res) => {
-        if (!res.ok) {
-          const result = await res.json();
-          throw result.message;
-        }
-        return res.json();
-      })
-      .then((res) => {
-        console.log(res);
-        const message = res.message;
-        alert(message);
-        router.push(`/main/profile`);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    try {
+      e.preventDefault();
+      await editProfile(values);
+      router.push(`/main/profile`);
+    } catch (error) {
+      console.log(error);
+    }
   };
   return (
     <div>
@@ -51,7 +36,7 @@ const EditForm = () => {
         <hr />
         <form onSubmit={handleEditProfile}>
           <Input className="form-control" type="text" name="name" label="Nama Lengkap" placeholder="Masukkan nama lengkap" id="name" onChange={onChange} value={values.name} />
-          <Input className="form-control" type="text" name="jobDesc" label="Job Desk." placeholder="Masukkan Job Desk." id="jobDesc" onChange={onChange} value={values.jobDesc} />
+          <Input className="form-control" type="text" name="job_desk" label="Job Desk." placeholder="Masukkan Job Desk." id="jobDesc" onChange={onChange} value={values.jobDesc} />
           <Input className="form-control" type="text" name="domicile" label="Domisili" placeholder="Masukkan Domisili" id="address" onChange={onChange} value={values.domicile} />
           <Input className="form-control" type="text" name="workplace" label="Tempat Kerja" placeholder="Masukkan tempat kerja" id="companyAddress" onChange={onChange} value={values.workplace} />
           <label className="form-label mt-4" htmlFor="desc" style={{ color: "#9EA0A5" }}>

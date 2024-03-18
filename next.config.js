@@ -1,16 +1,13 @@
 module.exports = {
   webpack(config) {
-    // Grab the existing rule that handles SVG imports
     const fileLoaderRule = config.module.rules.find((rule) => rule.test?.test?.(".svg"));
 
     config.module.rules.push(
-      // Reapply the existing rule, but only for svg imports ending in ?url
       {
         ...fileLoaderRule,
         test: /\.svg$/i,
-        resourceQuery: /url/, // *.svg?url
+        resourceQuery: /url/,
       },
-      // Convert all other *.svg imports to React components
       {
         test: /\.svg$/i,
         issuer: fileLoaderRule.issuer,
@@ -18,18 +15,17 @@ module.exports = {
         use: ["@svgr/webpack"],
       }
     );
-
-    // Modify the file loader rule to ignore *.svg, since we have it handled now.
     fileLoaderRule.exclude = /\.svg$/i;
 
     return config;
   },
 
-  // ...other config
-};
-module.exports = {
-  reactStrictMode: true,
-  env: {
-    HIRE_JOB_URL: process.env.HIRE_JOB_URL,
+  async rewrites() {
+    return [
+      {
+        source: `/v1/:slug*`,
+        destination: `${process.env.NEXT_PUBLIC_HIRE_JOB_URL}/v1/:slug*`,
+      },
+    ];
   },
 };

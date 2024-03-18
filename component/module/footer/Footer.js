@@ -13,7 +13,7 @@ const Footer = () => {
             <Image src={logo} /> <p className="text-light ms-2">Peworld</p>
           </div>
           <div className=" textWrapper ms-0">
-            <p className="text-light">Lorem ipsum dolor sit amet, consectetur adipiscing elit. In euismod ipsum et dui rhoncus auctor.</p>
+            <p className="text-light">Bergabunglah dengan Peworld hari ini dan mari bersama-sama menjelajahi dunia peluang karier dan rekrutmen yang tak terbatas!</p>
           </div>
 
           <hr />

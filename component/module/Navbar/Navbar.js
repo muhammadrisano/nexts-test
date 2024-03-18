@@ -10,14 +10,14 @@ import Button from "@/component/base/button/button";
 import { useRouter } from "next/navigation";
 const Navbar = () => {
   const router = useRouter();
-  const [isLoggedIn, setLoggedIn] = useState(false);
+  // const [isLoggedIn, setLoggedIn] = useState(false);
 
-  useEffect(() => {
-    const token = localStorage.getItem("token");
-    if (token) {
-      setLoggedIn(true);
-    }
-  }, []);
+  // useEffect(() => {
+  //   const token = localStorage.getItem("token");
+  //   if (token) {
+  //     setLoggedIn(true);
+  //   }
+  // }, []);
   return (
     <nav className=" navbar navbar-expand-lg bg-light fixed-top  ">
       <div className="container-fluid ">
@@ -29,8 +29,8 @@ const Navbar = () => {
         </button>
         <div className="collapse navbar-collapse  justify-content-end" id="navbarSupportedContent">
           <ul className=" nav navbar-nav  me-5 mb-2 mb-lg-0 justify-content-end ">
-            {isLoggedIn ? (
-              <>
+            {/* {isLoggedIn ? ( */}
+              {/* <> */}
                 <li className="nav-item me-4">
                   <Link className="nav-link" href="#">
                     <FaRegBell />
@@ -46,8 +46,8 @@ const Navbar = () => {
                     <FaUserCircle />
                   </Link>
                 </li>
-              </>
-            ) : (
+              {/* </> */}
+            {/* ) : (
               <>
                 <li className="mx-1">
                   <Button
@@ -68,7 +68,7 @@ const Navbar = () => {
                   />
                 </li>
               </>
-            )}
+            )} */}
           </ul>
         </div>
       </div>
