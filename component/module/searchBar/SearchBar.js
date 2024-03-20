@@ -5,6 +5,7 @@ import Button from "@/component/base/button/button";
 import Card from "../card/Card";
 import { getWorkers } from "@/service/workerClient";
 import { useRouter } from "next/navigation"
+import Link from "next/link";
 const SearchBar = () => {
   const router = useRouter()
   const [data, setData] = useState([]);
@@ -12,6 +13,7 @@ const SearchBar = () => {
   const [searchText, setSearchText] = useState("");
   const [sortBy, setSortBy] = useState("domicile");
   const [sortOrder, setSortOrder] = useState("DESC");
+  
 
   useEffect(() => {
     const fetchData = async () => {
