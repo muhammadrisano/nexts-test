@@ -23,3 +23,19 @@ export const getWorkers = async ({
     console.error("Error fetching workers data:", error.message);
   }
 };
+export const getProfileWorkers = async () => {
+  try {
+    const response = await fetch("/v1/workers/profile", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      credentials: "include",
+    });
+    const data = await response.json();
+    console.log(data.data)
+    return data.data;
+  } catch (error) {
+    return Promise.reject(error.message || "terjadi error!");
+  }
+};

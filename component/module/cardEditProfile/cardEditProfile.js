@@ -4,6 +4,7 @@ import Image from "next/image";
 import { FaUser } from "react-icons/fa";
 import { MdEdit } from "react-icons/md";
 import Button from "@/component/base/button/button";
+import { getProfileWorkers } from "@/service/workerClient";
 
 const CardEditProfile = () => {
   const [profileData, setProfileData] = useState(null);
@@ -11,24 +12,11 @@ const CardEditProfile = () => {
   useEffect(() => {
     const fetchProfile = async () => {
       try {
-        const token = localStorage.getItem("token");
-        const response = await fetch("https://fwm17-be-peword.vercel.app/v1/workers/profile", {
-          method: "GET",
-          headers: {
-            Authorization: `Bearer ${token}`,
-            "Content-Type": "application/json",
-          },
-        });
-
-        if (!response.ok) {
-          throw new Error("Failed to fetch profile data");
-        }
-
-        const data = await response.json();
-        console.log(data);
-        setProfileData(data.data);
+        const response = await getProfileWorkers()
+  await setProfileData(response)
+        
       } catch (error) {
-        console.error("Error fetching profile data:", error.message);
+        console.log(error);
       }
     };
 

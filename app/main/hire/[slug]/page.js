@@ -56,7 +56,7 @@ const Hire = async ({params}) => {
           >
             <h3 style={{ color: "#1F2A36" }}>Hubungi {profileData.name}</h3>
             <p className='mt-4'>Jangan ragu untuk menghubungi {profileData.name} hari ini untuk memulai percakapan yang mengarah ke kesuksesan bersama!</p>
-          <HireForm/>
+          <HireForm id={slug}/>
           </div>
         </div>
       </div>

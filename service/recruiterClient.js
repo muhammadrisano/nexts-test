@@ -25,7 +25,7 @@ export const getProfileRecruiter = async () => {
         credentials: "include",
       });
       const data = await response.json();
-      console.log(data)
+      console.log(data.data)
       return data.data;
     } catch (error) {
       return Promise.reject(error.message || "terjadi error!");

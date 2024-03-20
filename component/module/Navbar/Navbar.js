@@ -32,7 +32,7 @@ const Navbar = () => {
             {/* {isLoggedIn ? ( */}
               {/* <> */}
                 <li className="nav-item me-4">
-                  <Link className="nav-link" href="#">
+                  <Link className="nav-link" href="/main/notification">
                     <FaRegBell />
                   </Link>
                 </li>
