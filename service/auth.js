@@ -70,3 +70,23 @@ export const recruiterRegister = async (form) => {
     console.log(error);
   }
 };
+export const roleCheck = async () => {
+  try {
+    const response = await fetch(`/v1/auth/check-role`, {
+      headers: {
+        "content-type": "application/json",
+      },
+      method: "GET",
+      credentials: "include",
+    });
+    if (!response.ok) {
+      throw new Error("fetching check role failure");
+    }
+    const data = response.json();
+    console.log(data.data.role)
+    return data.data.role;
+    
+  } catch (error) {
+    console.log(error);
+  }
+};

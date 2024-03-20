@@ -13,6 +13,22 @@ export const getPortfolio = async () => {
     return Promise.reject("ada error bro...");
   }
 };
+export const getPortfolioById = async (id) => {
+  try {
+    const response = await fetch(`/v1/portfolio/${id}`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      credentials: "include",
+    });
+    const data = await response.json();
+    console.log(data.data)
+    return data.data;
+  } catch (error) {
+    return Promise.reject("ada error bro...");
+  }
+};
 export const deletePortfolio = async (id) => {
   try {
     const response = await fetch(`/v1/portfolio/${id}`, {

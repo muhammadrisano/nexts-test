@@ -1,8 +1,8 @@
 "use client";
 import React from "react";
 import CardEditProfile from "@/component/module/cardEditProfile/cardEditProfile";
-import EditFormRecruiter from "@/component/module/form/formEditRecruiter";
-const EditProfile = () => {
+import EditForm from "@/component/module/form/formEdit";
+const EditProfileWorker = () => {
   return (
     <div style={{ marginTop: "60px", position: "relative" }}>
       <div style={{ background: "#5E50A1", height: "300px", width: "100%", position: "absolute", top: "0", zIndex: "-1" }}></div>
@@ -12,7 +12,7 @@ const EditProfile = () => {
             <CardEditProfile child="Edit" />
           </div>
           <div className="col-sm-12 col-md-12 col-lg-8 col-xl-8  pt-4 px-4" style={{ borderRadius: "10px", background: "white" }}>
-            <EditFormRecruiter />
+            <EditForm />
           </div>
         </div>
       </div>
@@ -20,4 +20,4 @@ const EditProfile = () => {
   );
 };
 
-export default EditProfile;
+export default EditProfileWorker;

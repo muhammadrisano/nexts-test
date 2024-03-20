@@ -1,17 +1,11 @@
-
-import WorkerProfile from "@/component/module/workerProfile/workerProfileCheck";
-import { getSkillById, getWorkersById, getPortfolioById, roleCheck } from "@/service/worker";
-import React from "react";
+import React from 'react'
+import { getSkillById, getWorkersById,  } from "@/service/worker";
 import { FaUser } from "react-icons/fa";
-import Button from "@/component/base/button/button";
-import Link from "next/link";
-const DetailProfile = async ({ params }) => {
-  const slug = params.slug;
-  console.log(slug);
-  const role = await roleCheck();
-  const profileData = await getWorkersById(slug);
+import HireForm from '@/component/module/form/formHire';
+const Hire = async ({params}) => {
+    const slug = params.slug
+    const profileData = await getWorkersById(slug);
   const skillsData = await getSkillById(slug)
-  
   return (
     <div style={{ marginTop: "60px", position: "relative" }}>
       <div
@@ -39,15 +33,7 @@ const DetailProfile = async ({ params }) => {
                   <p className="card-subtitle text-secondary">{profileData.domicile || "-"}</p>
                   
                   <p className="card-text text-secondary mt-2">{profileData.description || "-"}</p>
-                  {role === "recruiter" ? (
-                    <Link href={`/main/hire/${profileData.id}`}>
-                    <Button
-                      child="Hire"
-                      
-                      style={{ color: "white", backgroundColor: "#5E50A1", width: "100%" }}
-                    />
-                    </Link>
-                  ) : (<></>)}
+                  
                   
                   <h4 className="mt-3">Skill</h4>
                   
@@ -68,30 +54,14 @@ const DetailProfile = async ({ params }) => {
             className="col-sm-12 col-md-12 col-lg-8 col-xl-8  pt-4 px-4"
             style={{ borderRadius: "10px", background: "white" }}
           >
-            <WorkerProfile id={slug}/>
+            <h3 style={{ color: "#1F2A36" }}>Hubungi {profileData.name}</h3>
+            <p className='mt-4'>Jangan ragu untuk menghubungi {profileData.name} hari ini untuk memulai percakapan yang mengarah ke kesuksesan bersama!</p>
+          <HireForm/>
           </div>
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default DetailProfile;
-// export async function getStaticPaths() {
-//   const paths = await getAllWorkerIds(); // Mengambil semua slug yang mungkin
-//   return {
-//     paths,
-//     fallback: false // Ubah menjadi true jika ingin memberikan 404 jika slug tidak ditemukan
-//   };
-// }
-
-// // Mengimplementasikan getStaticProps
-// export async function getStaticProps({ params }) {
-//   const slug = params.slug;
-//   const profileData = await getWorkersById(slug); // Mengambil data profil berdasarkan slug
-//   return {
-//     props: {
-//       profileData
-//     }
-//   };
-// }
+export default Hire

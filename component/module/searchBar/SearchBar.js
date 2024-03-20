@@ -59,7 +59,7 @@ const SearchBar = () => {
     setPage(1); 
   };
   const handleProfileClick = (id) => {
-    router.push(`/detail-profile/${id}`);
+    router.push(`/main/detail+profile/${id}`);
   };
 
   

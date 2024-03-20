@@ -46,29 +46,7 @@ const Navbar = () => {
                     <FaUserCircle />
                   </Link>
                 </li>
-              {/* </> */}
-            {/* ) : (
-              <>
-                <li className="mx-1">
-                  <Button
-                    child="masuk"
-                    style={{ color: "#5E50A1", backgroundColor: "white", width: "100%", border: "1px solid #5E50A1" }}
-                    onClick={() => {
-                      router.push(`/auth/login`);
-                    }}
-                  />
-                </li>
-                <li className="mx-1">
-                  <Button
-                    child="daftar"
-                    style={{ color: "white", backgroundColor: "#5E50A1", width: "100%" }}
-                    onClick={() => {
-                      router.push(`/auth/register`);
-                    }}
-                  />
-                </li>
-              </>
-            )} */}
+              
           </ul>
         </div>
       </div>
