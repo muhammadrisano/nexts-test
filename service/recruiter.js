@@ -23,15 +23,16 @@ export const getRecruitersProfile = async () => {
         ...(token ? { Cookie: `token=${token};path=/;expires=Session` } : {}),
       },
       credentials: "include",
+      cache : "no-cache"
     });
 
     if (!response.ok) {
-      throw new Error("Failed to fetch profile data");
+      throw new Error("Failed to fetch recruiter profile data");
     }
     const data = await response.json();
     console.log(data);
     return data.data;
   } catch (error) {
-    console.error("Error fetching profile data:", error.message);
+    console.error("Error fetching recruiter profile data:", error.message);
   }
 };

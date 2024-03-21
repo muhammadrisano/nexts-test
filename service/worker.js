@@ -23,6 +23,7 @@ export const getWorkersSkills = async () => {
         ...(token ? { Cookie: `token=${token};path=/;expires=Session` } : {}),
       },
       credentials: "include",
+      cache : "no-cache"
      
     });
     const data = await response.json();
@@ -41,6 +42,7 @@ export const getSkillById = async (slug) => {
         ...(token ? { Cookie: `token=${token};path=/;expires=Session` } : {}),
       },
       credentials: "include",
+      cache : "no-cache"
     
     });
     const data = await response.json();
@@ -61,17 +63,18 @@ export const getProfile = async () => {
         ...(token ? { Cookie: `token=${token};path=/;expires=Session` } : {}),
       },
       credentials: "include",
+      cache : "no-cache"
       
     });
 
     if (!response.ok) {
-      throw new Error("Failed to fetch profile data");
+      throw new Error("Failed to fetch worker profile data");
     }
     const data = await response.json();
     console.log(data);
     return data.data;
   } catch (error) {
-    console.error("Error fetching profile data:", error.message);
+    console.error("Error fetching worker profile data:", error.message);
   }
 };
 export const getWorkersById = async (slug) => {
@@ -83,16 +86,17 @@ export const getWorkersById = async (slug) => {
         ...(token ? { Cookie: `token=${token};path=/;expires=Session` } : {}),
       },
       credentials: "include",
+      cache : "no-cache"
       
     });
     if (!response.ok) {
-      throw new Error("Failed to fetch workers data");
+      throw new Error("Failed to fetch workerId data");
     }
     const data = await response.json();
  console.log(data)
     return data.data;
   } catch (error) {
-    console.error("Error fetching workers data:", error.message);
+    console.error("Error fetching workerId data:", error.message);
   }
 };
 export const getPortfolioById = async (slug) => {
@@ -104,15 +108,16 @@ export const getPortfolioById = async (slug) => {
         ...(token ? { Cookie: `token=${token};path=/;expires=Session` } : {}),
       },
       credentials: "include",
+      cache : "no-cache"
     });
     if (!response.ok) {
-      throw new Error("Failed to fetch workers data");
+      throw new Error("Failed to fetch workers portfolio data");
     }
     const data = await response.json();
  console.log(data.data)
     return data.data;
   } catch (error) {
-    console.error("Error fetching workers data:", error.message);
+    console.error("Error fetching workers portfolio data:", error.message);
   }
 };
 export const roleCheck = async () => {
@@ -124,14 +129,15 @@ export const roleCheck = async () => {
         ...(token ? { Cookie: `token=${token};path=/;expires=Session` } : {}),
       },
       credentials: "include",
+      cache : "no-cache"
     });
     if (!response.ok) {
-      throw new Error("Failed to fetch workers data");
+      throw new Error("Failed to fetch role data");
     }
     const data = await response.json();
 console.log("role", data.data.data.role)
     return data.data.data.role;
   } catch (error) {
-    console.error("Error fetching workers data:", error.message);
+    console.error("Error fetching role data:", error.message);
   }
 };

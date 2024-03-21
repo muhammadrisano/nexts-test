@@ -22,16 +22,17 @@ export const getRecruitersNotification = async () => {
           ...(token ? { Cookie: `token=${token};path=/;expires=Session` } : {}),
         },
         credentials: "include",
+        cache : "no-cache"
       });
   
       if (!response.ok) {
-        throw new Error("Failed to fetch profile data");
+        throw new Error("Failed to fetch notification data");
       }
       const data = await response.json();
       console.log(data);
       return data.data;
     } catch (error) {
-      console.error("Error fetching profile data:", error.message);
+      console.log("Error fetching recruiter notification data:", error.message);
     }
   };
 export const getWorkersNotification = async () => {
@@ -44,15 +45,16 @@ export const getWorkersNotification = async () => {
           ...(token ? { Cookie: `token=${token};path=/;expires=Session` } : {}),
         },
         credentials: "include",
+        cache : "no-cache"
       });
   
       if (!response.ok) {
-        throw new Error("Failed to fetch profile data");
+        throw new Error("Failed to fetch notification data");
       }
       const data = await response.json();
       console.log(data);
       return data.data;
     } catch (error) {
-      console.error("Error fetching profile data:", error.message);
+      console.error("Error fetching worker notification data:", error.message);
     }
   };
