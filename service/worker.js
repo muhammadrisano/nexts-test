@@ -1,31 +1,18 @@
 const url = process.env.NEXT_PUBLIC_HIRE_JOB_URL;
 import { cookies } from "next/headers";
 
+// const getCookie = async (name) => {
+//   return cookies().get(name)?.value ?? "";
+// };
 const getCookie = async (name) => {
-  return cookies().get(name)?.value ?? "";
+  const cookieData = cookies().get(name)?.value ?? "";
+  return new Promise((resolve) =>
+    setTimeout(() => {
+      resolve(cookieData);
+    }, 1000)
+  );
 };
 
-// export const getWorkers = async ({ limit, page, sort, sortBy, search} = {}) => {
-//   try {
-//     const token = await getCookie("token");
-
-//     const response = await fetch(`${url}/v1/workers?limit=${limit}&page=${page}&sort=${sort}&sortBy=${sortBy}&search=${search}`, {
-//       headers: {
-//         "Content-Type": "application/json",
-//         ...(token ? { Cookie: `token=${token};path=/;expires=Session` } : {}),
-//       },
-//       credentials: "include",
-//     });
-//     if (!response.ok) {
-//       throw new Error(response.status, "Failed to fetch workers data");
-//     }
-//     const data = await response.json();
-
-//     return data.data;
-//   } catch (error) {
-//     console.error("Error fetching workers data:", error.message);
-//   }
-// };
 
 export const getWorkersSkills = async () => {
   try {
