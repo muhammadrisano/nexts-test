@@ -36,7 +36,7 @@ export const getWorkersSkills = async () => {
         ...(token ? { Cookie: `token=${token};path=/;expires=Session` } : {}),
       },
       credentials: "include",
-      cache: 'no-store'
+     
     });
     const data = await response.json();
     console.log(data);
@@ -54,7 +54,7 @@ export const getSkillById = async (slug) => {
         ...(token ? { Cookie: `token=${token};path=/;expires=Session` } : {}),
       },
       credentials: "include",
-      cache: 'no-store'
+    
     });
     const data = await response.json();
     console.log(data);
@@ -74,7 +74,7 @@ export const getProfile = async () => {
         ...(token ? { Cookie: `token=${token};path=/;expires=Session` } : {}),
       },
       credentials: "include",
-      cache: 'no-store'
+      
     });
 
     if (!response.ok) {
@@ -96,7 +96,7 @@ export const getWorkersById = async (slug) => {
         ...(token ? { Cookie: `token=${token};path=/;expires=Session` } : {}),
       },
       credentials: "include",
-      cache: 'no-store'
+      
     });
     if (!response.ok) {
       throw new Error("Failed to fetch workers data");
