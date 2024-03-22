@@ -1,3 +1,4 @@
+"use server"
 import { getRecruitersNotification } from "@/service/notification";
 import React from "react";
 

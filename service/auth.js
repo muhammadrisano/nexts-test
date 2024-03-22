@@ -70,23 +70,43 @@ export const recruiterRegister = async (form) => {
     console.log(error);
   }
 };
-export const roleCheck = async () => {
+
+
+export const getRole = async () => {
   try {
     const response = await fetch(`/v1/auth/check-role`, {
       headers: {
-        "content-type": "application/json",
-      },
-      method: "GET",
-      credentials: "include",
-    });
-    if (!response.ok) {
-      throw new Error("fetching check role failure");
-    }
-    const data = response.json();
-    console.log(data.data.role)
-    return data.data.role;
-    
+      "content-type": "application/json",
+    },
+    method: "GET",
+    body: JSON.stringify(form),
+    credentials: "include",
+  })
+  const data= response.json()
+  console.log(data)
+  return data.data.role
   } catch (error) {
-    console.log(error);
+    console.log(error)
+    
   }
-};
+}
+// export const roleCheck = async () => {
+//   try {
+//     const response = await fetch(`/v1/auth/check-role`, {
+//       headers: {
+//         "content-type": "application/json",
+//       },
+//       method: "GET",
+//       credentials: "include",
+//     });
+//     if (!response.ok) {
+//       throw new Error("fetching check role failure");
+//     }
+//     const data = response.json();
+//     console.log(data.data.role)
+//     return data.data.role;
+    
+//   } catch (error) {
+//     console.log(error);
+//   }
+// };

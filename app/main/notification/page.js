@@ -1,3 +1,4 @@
+"use server"
 import React from 'react'
 import { roleCheck } from '@/service/worker'
 import RecruiterNotification from './recruiter'

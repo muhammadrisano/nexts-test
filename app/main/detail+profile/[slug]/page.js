@@ -1,4 +1,4 @@
-
+"use server"
 import WorkerProfile from "@/component/module/workerProfile/workerProfileCheck";
 import { getSkillById, getWorkersById, getPortfolioById, roleCheck } from "@/service/worker";
 import React from "react";
@@ -31,7 +31,7 @@ const DetailProfile = async ({ params }) => {
               {profileData && (
                 <div className="card py-3" style={{ width: "80%", borderRadius: "10px" }}>
                 <div className="card-img" style={{ boxSizing: "border-box", width: "100px", height: "100px", marginLeft: "auto", marginRight: "auto", borderRadius: "50%" }}>
-                  {profileData.photo ? <img src={profileData.photo} className="card-img " style={{ width: "100%", height: "auto" }} /> : <FaUser className="card-img " style={{ width: "100%", height: "auto", borderRadius: "50%", color: "#9EA0A5" }} />}
+                  {profileData.photo ? <img src={profileData.photo} className="card-img " style={{ width: "100%", height: "100%", borderRadius : "50%", objectFit : "cover" }} /> : <FaUser className="card-img " style={{ width: "100%", height: "auto", borderRadius: "50%", color: "#9EA0A5" }} />}
                 </div>
                 <div className="card-body">
                   <h4 className="card-title ">{profileData.name || "-"}</h4>

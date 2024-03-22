@@ -1,3 +1,4 @@
+"use server"
 import { getWorkersNotification } from '@/service/notification'
 import React from 'react'
 

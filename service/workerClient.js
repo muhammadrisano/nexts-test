@@ -33,6 +33,22 @@ export const getProfileWorkers = async () => {
       credentials: "include",
     });
     const data = await response.json();
+    console.log( "worker", data.data)
+    return data.data;
+  } catch (error) {
+    return Promise.reject(error.message || "terjadi error!");
+  }
+};
+export const getSkillsWorkers = async () => {
+  try {
+    const response = await fetch("/v1/skills", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      credentials: "include",
+    });
+    const data = await response.json();
     console.log(data.data)
     return data.data;
   } catch (error) {
