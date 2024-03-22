@@ -23,7 +23,7 @@ export const getWorkersSkills = async () => {
         ...(token ? { Cookie: `token=${token};path=/;expires=Session` } : {}),
       },
       credentials: "include",
-      cache : "no-cache"
+      cache: 'no-store'
      
     });
     const data = await response.json();
@@ -42,7 +42,7 @@ export const getSkillById = async (slug) => {
         ...(token ? { Cookie: `token=${token};path=/;expires=Session` } : {}),
       },
       credentials: "include",
-      cache : "no-cache"
+      cache: 'no-store'
     
     });
     const data = await response.json();
@@ -63,7 +63,7 @@ export const getProfile = async () => {
         ...(token ? { Cookie: `token=${token};path=/;expires=Session` } : {}),
       },
       credentials: "include",
-      cache : "no-cache"
+      cache: 'no-store'
       
     });
 
@@ -86,7 +86,7 @@ export const getWorkersById = async (slug) => {
         ...(token ? { Cookie: `token=${token};path=/;expires=Session` } : {}),
       },
       credentials: "include",
-      cache : "no-cache"
+      cache: 'no-store'
       
     });
     if (!response.ok) {
@@ -108,7 +108,7 @@ export const getPortfolioById = async (slug) => {
         ...(token ? { Cookie: `token=${token};path=/;expires=Session` } : {}),
       },
       credentials: "include",
-      cache : "no-cache"
+      cache: 'no-store'
     });
     if (!response.ok) {
       throw new Error("Failed to fetch workers portfolio data");
@@ -129,7 +129,7 @@ export const roleCheck = async () => {
         ...(token ? { Cookie: `token=${token};path=/;expires=Session` } : {}),
       },
       credentials: "include",
-      cache : "no-cache"
+      cache: 'no-store'
     });
     if (!response.ok) {
       throw new Error("Failed to fetch role data");

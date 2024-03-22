@@ -22,7 +22,7 @@ export const getRecruitersNotification = async () => {
           ...(token ? { Cookie: `token=${token};path=/;expires=Session` } : {}),
         },
         credentials: "include",
-        cache : "no-cache"
+        cache: 'no-store'
       });
   
       if (!response.ok) {
@@ -45,7 +45,7 @@ export const getWorkersNotification = async () => {
           ...(token ? { Cookie: `token=${token};path=/;expires=Session` } : {}),
         },
         credentials: "include",
-        cache : "no-cache"
+        cache: 'no-store'
       });
   
       if (!response.ok) {
