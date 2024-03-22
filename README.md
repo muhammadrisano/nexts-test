@@ -45,7 +45,6 @@ bun dev
 |Login Page|Register Page|
 |------------|---------------|
 |![Login](https://github.com/ChanraSB/next-HireJob/assets/151555550/98b4c7e5-84ad-45bc-abf6-4fc53ed7cdf7)|![register](https://github.com/ChanraSB/next-HireJob/assets/151555550/71b0a580-509e-48d2-825c-b5f1bd9b9d81)|
-
 |Landing Page|Home Page|
 |------------|-------------|
 |![landing page](https://github.com/ChanraSB/next-HireJob/assets/151555550/469954b0-29e0-4a3a-8bbe-7ca16ec58e3b)|![home](https://github.com/ChanraSB/next-HireJob/assets/151555550/73d51cd0-1be9-4d76-97ba-6a9129a5c3cb)|
