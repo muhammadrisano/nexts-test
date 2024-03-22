@@ -58,6 +58,11 @@ bun dev
 |------------|-------------|
 |![Add Portfolio](https://github.com/ChanraSB/next-HireJob/assets/151555550/7396f5e3-06a4-4f5f-8718-fbbda697cca4)|![Edit Profile Worker](https://github.com/ChanraSB/next-HireJob/assets/151555550/775f3227-95cd-429a-abc8-41cd4ca02818)|
 
+### Recruiter
+|Register Page|Edit Login Page| 
+|------------|-------------|
+|![Register Recruiter (2)](https://github.com/ChanraSB/next-HireJob/assets/151555550/d7a10c6b-7e46-4206-96fd-f9aca3570a0b) | ![Login (4)](https://github.com/ChanraSB/next-HireJob/assets/151555550/3323f12b-1776-41eb-8433-9154e8ff7df7) |
+
 [Worker Profile](https://github.com/ChanraSB/next-HireJob/assets/151555550/35237781-42a5-4fa4-9065-6f37522e595b) <br>
 [home](https://github.com/ChanraSB/next-HireJob/assets/151555550/73d51cd0-1be9-4d76-97ba-6a9129a5c3cb) <br>
 [editProfile](https://github.com/ChanraSB/next-HireJob/assets/151555550/9b895716-cb5d-4a59-8f32-cda2783a1e3e) <br>
