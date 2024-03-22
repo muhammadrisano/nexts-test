@@ -48,7 +48,7 @@ bun dev
 
 |Landing Page|Home Page|
 |------------|-------------|
-|![landing page](https://github.com/ChanraSB/next-HireJob/assets/151555550/469954b0-29e0-4a3a-8bbe-7ca16ec58e3b)|![home](https://github.com/ChanraSB/next-HireJob/assets/151555550/73d51cd0-1be9-4d76-97ba-6a9129a5c3cb)|
+|![landing page](https://github.com/ChanraSB/next-HireJob/assets/151555550/469954b0-29e0-4a3a-8bbe-7ca16ec58e3b)|![Home page](https://github.com/ChanraSB/next-HireJob/assets/151555550/9941cf07-6ecb-4a16-be45-6d386d080388)|
 
 |Detail Worker Page|Profile Page| 
 |------------|-------------|
@@ -69,6 +69,7 @@ bun dev
 ![Recruiter Profile](https://github.com/ChanraSB/next-HireJob/assets/151555550/ee6358bb-7eee-418c-a963-4d95a4a54023)
 ![Edit Recruiter Profile](https://github.com/ChanraSB/next-HireJob/assets/151555550/912797b7-1114-46d5-bdc9-37f4cf9a72f5)
 ![Hire](https://github.com/ChanraSB/next-HireJob/assets/151555550/a954073c-93d8-4350-91ad-e88e8426942b)
+
 ## Author
 💻 [Chanra S Bakkara](https://github.com/ChanraSB)
 
